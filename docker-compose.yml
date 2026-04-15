@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  web:
+    build: ./src/web
+    ports:
+      - "4001:80"
+    depends_on:
+      - api
+
+  api:
+    build: ./src/api
+    ports:
+      - "4002:3000"
