@@ -1,0 +1,20 @@
+name: Demostracion de un pipeline de GithubActions
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Saludo desde main
+        if: github.ref == 'refs/heads/main'
+        run: echo "Hola desde main, mi nombre es Darli Manuel"
+
+      - name: Saludo desde develop
+        if: github.ref == 'refs/heads/develop'
+        run: echo "Hola desde develop, mi nombre es Darli Manuel"
